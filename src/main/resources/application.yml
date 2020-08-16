@@ -1,5 +1,8 @@
-spring.datasource.url= jdbc:oracle:thin:@0.0.0.0:32769:ORCLCDB
-spring.datasource.username=everton
-spring.datasource.password=48201101
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+spring:
+  datasource:
+    url: jdbc:h2:mem:evertondb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect

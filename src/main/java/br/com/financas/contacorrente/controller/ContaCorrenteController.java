@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("conta-corrente")
+@RequestMapping("/conta-corrente")
 public class ContaCorrenteController {
 
     @Autowired
@@ -19,22 +19,22 @@ public class ContaCorrenteController {
         return contaCorrenteService.list();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ContaCorrente one(@PathVariable Long id){
         return contaCorrenteService.findById(id);
     }
 
-    @PostMapping("{id}")
+    @PostMapping("/{id}")
     public void update(@RequestBody ContaCorrente contaCorrente){
         this.contaCorrenteService.newContaCorrente(contaCorrente);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public void save(@RequestBody ContaCorrente contaCorrente, @PathVariable Long id) {
         contaCorrenteService.replaceContaCorrente(contaCorrente, id);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         contaCorrenteService.deleteById(id);
     }
